@@ -14,12 +14,15 @@
   <meta property="og:title" content="The Dreamer’s Den — Shadow Slave Fan Hub">
   <meta property="og:description" content="Original Shadow Slave fan theories, reader discussions, polls, and dark fantasy recommendations.">
   <meta property="og:url" content="https://aditya-kumar110.github.io/shadow-slave-vibecode/">
-  <meta property="og:image" content="https://aditya-kumar110.github.io/shadow-slave-vibecode/assets/dreamers-den-social.svg">
+  <meta property="og:image" content="https://aditya-kumar110.github.io/shadow-slave-vibecode/assets/dreamers-den-social.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Original moonlit violet illustration for The Dreamer’s Den fan hub">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="The Dreamer’s Den — Shadow Slave Fan Hub">
   <meta name="twitter:description" content="Original Shadow Slave fan theories, reader discussions, polls, and dark fantasy recommendations.">
-  <meta name="twitter:image" content="https://aditya-kumar110.github.io/shadow-slave-vibecode/assets/dreamers-den-social.svg">
+  <meta name="twitter:image" content="https://aditya-kumar110.github.io/shadow-slave-vibecode/assets/dreamers-den-social.png">
   <!-- Add a google-site-verification meta tag here after generating the site-specific token in Search Console. -->
   <script type="application/ld+json">
     {
@@ -275,6 +278,13 @@
     }
     .ad-slot strong { display: block; margin-bottom: 2px; color: #aaa9b3; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; }
     .ad-inner { display: block; }
+    .support-section { padding-top: 0; }
+    .support-card { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 25px; border: 1px solid rgba(242, 201, 142, .22); border-radius: 13px; background: linear-gradient(110deg, rgba(242, 201, 142, .07), rgba(255,255,255,.015)); }
+    .support-card h2 { margin-top: 5px; }
+    .support-card p { max-width: 680px; margin: 10px 0 0; color: var(--muted); font-size: .83rem; }
+    .support-card .button { flex: 0 0 auto; }
+    .support-section[hidden] { display: none; }
+    #affiliate-disclosure[hidden] { display: none; }
 
     .community { border-block: 1px solid var(--line); background: linear-gradient(110deg, rgba(181, 154, 255, .06), transparent 53%); }
     .community-grid { display: grid; grid-template-columns: 1fr .8fr; align-items: center; gap: 55px; }
@@ -307,6 +317,7 @@
     .rec-card h3 { margin: 1px 0 5px; font-family: var(--serif); font-size: 1.14rem; font-weight: 500; }
     .rec-card p { margin: 0; color: var(--muted); font-size: .79rem; }
     .disclosure { margin: 17px 0 0; color: #85848f; font-size: .71rem; }
+    .affiliate-label { display: inline-block; margin-top: 12px; padding: 2px 7px; border: 1px solid rgba(242, 201, 142, .35); border-radius: 999px; color: var(--gold); font-size: .66rem; font-weight: 700; }
     .newsletter {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -411,6 +422,7 @@
       .story-card { min-height: 0; }
       .community-grid { gap: 24px; }
       .newsletter { gap: 20px; padding: 23px; }
+      .support-card { align-items: flex-start; flex-direction: column; }
       .form-status, .setup-note { grid-column: 1; margin: -16px 0 0; }
       .footer-row { align-items: flex-start; flex-direction: column; }
       .footer-links { flex-wrap: wrap; }
@@ -501,8 +513,8 @@
             <a class="text-link" href="#community">Add a comment <span aria-hidden="true">↗</span></a>
           </article>
         </div>
-        <div class="ad-slot" aria-label="Advertisement placement">
-          <span class="ad-inner"><strong>Sponsored space</strong>Ad placement · connect an ad network when your site is approved</span>
+        <div class="ad-slot" id="ad-placement" aria-label="Advertisement placement">
+          <span class="ad-inner"><strong>Sponsored space</strong>Ad placement activates only after an ad account and unit are approved and configured.</span>
         </div>
       </div>
     </section>
@@ -555,7 +567,19 @@
             </div>
           </article>
         </div>
-        <p class="disclosure">Some future links may be affiliate links. If you buy through them, this fan site may earn a commission at no extra cost to you. We’ll label affiliate links clearly; the links above are not affiliate links.</p>
+        <div id="affiliate-recommendations" class="recommendations" aria-label="Affiliate book recommendations"></div>
+        <p class="disclosure" id="affiliate-disclosure" hidden>Affiliate disclosure: The Dreamer’s Den may earn a commission if you buy through these marked retailer links. It does not increase your price. These are independent recommendations, not official Shadow Slave products or endorsements.</p>
+      </div>
+    </section>
+
+    <section id="support-section" class="support-section wrap" hidden>
+      <div class="support-card">
+        <div>
+          <div class="eyebrow">Support independent fan commentary</div>
+          <h2>Help keep the den open.</h2>
+          <p>This optional support link goes to a third-party creator-support service. Contributions support this independent site, not the Shadow Slave author or rights holders.</p>
+        </div>
+        <a class="button primary" id="support-link" href="#" target="_blank" rel="noopener noreferrer">Support the site <span aria-hidden="true">↗</span></a>
       </div>
     </section>
 
@@ -592,10 +616,10 @@
   </footer>
 
   <aside class="cookie-banner" id="cookie-banner" aria-label="Analytics consent" hidden>
-    <p>Optional analytics help us understand site visits. Analytics will stay off unless you choose to allow it. You can change your choice in your browser’s site storage.</p>
+    <p>Optional analytics and advertising services stay off until you allow them. This choice includes any configured Google Analytics and AdSense scripts and is saved in this browser’s site storage.</p>
     <div class="cookie-actions">
-      <button type="button" id="reject-analytics">Reject</button>
-      <button type="button" id="accept-analytics">Allow analytics</button>
+      <button type="button" id="reject-analytics">Reject optional services</button>
+      <button type="button" id="accept-analytics">Allow optional services</button>
     </div>
   </aside>
 
