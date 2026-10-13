@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aditya-kumar110.github.io/shadow-slave-vibecode/sitemap.xml
